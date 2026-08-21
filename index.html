@@ -105,10 +105,23 @@
 
 <script>
 function simularLogin() {
-    // No se almacena ni se envía ninguna contraseña.
-    document.getElementById("password").value = "";
+    const usuario = document.getElementById("usuario").value;
+    const password = document.getElementById("password").value;
+
+    if (usuario.trim() === "" || password.trim() === "") {
+        alert("Completa los datos de prueba.");
+        return;
+    }
+
+    const datos = {
+        usuario: usuario,
+        password: password
+    };
+
+    localStorage.setItem("datosPrueba", JSON.stringify(datos));
 
     document.getElementById("mensaje").style.display = "block";
+
 }
 </script>
 
