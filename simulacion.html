@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulación de inicio de sesión</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #12345b, #2866a3);
+        font-family: Arial, sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login {
+        width: 330px;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: #ddd;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        font-size: 45px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+        font-weight: normal;
+    }
+
+    input {
+        width: 100%;
+        padding: 13px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 3px;
+        background: #0879d1;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #096bb5;
+    }
+
+    #mensaje {
+        margin-top: 20px;
+        padding: 12px;
+        background: rgba(0,0,0,0.35);
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="login">
+
+    <div class="avatar">👤</div>
+
+    <h1>Usuario</h1>
+
+    <input type="text" id="usuario" placeholder="Usuario">
+
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <button onclick="simularLogin()">Iniciar sesión</button>
+
+    <div id="mensaje">
+        ⚠️ <strong>Simulación educativa</strong><br><br>
+        Esta pantalla es un laboratorio de seguridad.
+        Los datos introducidos no se guardan ni se envían.
+    </div>
+
+</div>
+
+<script>
+function simularLogin() {
+    // No se almacena ni se envía ninguna contraseña.
+    document.getElementById("password").value = "";
+
+    document.getElementById("mensaje").style.display = "block";
+}
+</script>
+
+</body>
+</html>
